@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Billing\BillingListController;
+use App\Http\Controllers\Sites\ViewSiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BillingListController::class, 'index']);
 
+Route::get('site/view/{siteIdentifier}', [ViewSiteController::class, 'show']);

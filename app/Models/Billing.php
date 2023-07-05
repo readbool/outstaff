@@ -25,12 +25,12 @@ final class Billing extends Model
         'electricity_usage',
     ];
 
-    public function getBillingEndDate(): ?Carbon
+    public function getBillingEndDate(): ?string
     {
         return $this->getAttribute('billing_end_date');
     }
 
-    public function getBillingStartDate(): ?Carbon
+    public function getBillingStartDate(): ?string
     {
         return $this->getAttribute('billing_start_date');
     }

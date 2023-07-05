@@ -158,7 +158,8 @@ Technical requirements:
         WHERE MONTH(billing_end_date) = MONTH($monthFromRequest);
 
        1.d
-        SELECT sites.*, SUM(billings.total_amount)/12 as avgYearlyTotalAmount from sites join billings on billings.site_identifier = sites.identifier;
+        SELECT sites.*, AVG(billings.total_amount) as avgYearlyTotalAmount from sites join billings on billings.site_identifier = sites.identifier
+        group by sites.id;
 
        1.e
         SELECT s.name, s.address, b.total_amount, b.electricity_usage

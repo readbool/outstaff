@@ -1,7 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Providers;
 
+use App\Repositories\Billings\BillingRepository;
+use App\Repositories\Billings\Interfaces\BillingRepositoryInterface;
+use App\Repositories\Sites\Interfaces\SiteRepositoryInterface;
+use App\Repositories\Sites\SiteRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +17,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(BillingRepositoryInterface::class, BillingRepository::class);
+        $this->app->bind(SiteRepositoryInterface::class, SiteRepository::class);
     }
 
     /**

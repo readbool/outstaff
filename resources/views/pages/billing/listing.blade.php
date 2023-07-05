@@ -6,19 +6,15 @@
         </h1>
     </div>
     <div class="container mt-5">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                SELECT MONTH
-            </button>
-            <ul class="dropdown-menu">
+        <div class="form-floating">
+            <select class="form-select" id="monthSelector"  aria-label="Select Month to show">
                 @foreach($months as $month)
-                    <li id="monthSelector" class="dropdown-item">
-                        {{$month}}
-                    </li>
+                <option value={{$month}}>{{$month}}</option>
                 @endforeach
-            </ul>
+            </select>
+            <label for="floatingSelect">Select Month to show listing</label>
         </div>
-        <div>
+        <div id="listing">
 
         </div>
     </div>
