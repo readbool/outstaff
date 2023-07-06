@@ -30,7 +30,7 @@ final class ViewSiteController extends BaseController
         $siteData = [
             'siteName' => $site->getName(),
             'siteAddress' => $site->getAddress(),
-            'totalAmount' => 0,
+            'totalAmount' => $site->avgYearlyTotalAmount ?? 0,
             'error' => '',
         ];
 

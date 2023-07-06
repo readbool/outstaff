@@ -169,5 +169,6 @@ Technical requirements:
             SELECT site_identifier, MAX(billing_end_date) AS latest_date
             FROM billings
             GROUP BY site_identifier
-        ) latest ON b.site_identifier = latest.site_identifier AND b.billing_end_date = latest.latest_date;
+        ) latest ON b.site_identifier = latest.site_identifier AND b.billing_end_date = latest.latest_date
+        where s.user_id = $userIdHere;
 
